@@ -1,7 +1,7 @@
 class loginPage {
-        fieldUserName='[id="user-name"]';
-        fieldPassword='[id="password"]';
-        btnLogin='[id="login-button"]';
+        fieldUserName='#user-name';
+        fieldPassword='#password';
+        btnLogin='#login-button';
 
     redirect(){
         cy.visit('')
