@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "cypress": "^13.7.0"
+  },
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.5.29"
+  }
+}

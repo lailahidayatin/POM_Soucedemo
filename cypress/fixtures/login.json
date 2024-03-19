@@ -1,0 +1,20 @@
+[
+    {
+        "username":"standard_user",
+        "password":"secret_sauce",
+        "expected":"valid login",
+        "assertion":""  
+    },
+    {
+        "username":"locked_out_user",
+        "password":"secret_sauce",
+        "expected":"locked out user",
+        "assertion":"Epic sadface: Sorry, this user has been locked out."
+    },
+    {
+        "username":"visual_user",
+        "password":"secret_sauce",
+        "expected":"valid login",
+        "assertion":""
+    }
+]   
