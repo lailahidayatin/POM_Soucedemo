@@ -1,19 +1,15 @@
 import loginPage from "../PageObject/LoginPage";
+import Data from "../fixtures/login.json";
 
 describe("Login Test", function () {
-    before(function () {
-        cy.fixture('login.json').then(function (LoginData) {
-            this.LoginData = LoginData;
-        });
-    });
-
-    it('Login with different credentials', function () {
-        const login = new loginPage();
+    const login = new loginPage();
+    beforeEach('same step', () =>{
         login.redirect();
         
+    })
         // Iterate over LoginData
-        this.LoginData.forEach(element => {
-            it('Login with ${element.expected}', () => {
+        Data.forEach(element => {
+           it(`Login with ${element.expected}`, () => {
                 // Test logic for each set of credentials
                 if (element.username != '') {
                     login.inputEmail(element.username);
@@ -21,14 +17,14 @@ describe("Login Test", function () {
                 if (element.password != '') {
                     login.inputPassword(element.password);
                 }
-                login.clickLogin();
+                login.clickLoginButton();
 
-                if (element.expected === 'valid data') {
-                    cy.url().should('be.equal', 'https://www.saucedemo.com/inventory.html');
+                if (element.expected === 'valid login') {
+                    cy.url().should('be.equal','https://www.saucedemo.com/inventory.html')
                 } else {
-                    cy.url().should('be.equal', element.assertion);
+                    cy.get('[data-test="error"]').should('contain', element.assertion);  
                 }
             });
         });
     });
-});
+//});
