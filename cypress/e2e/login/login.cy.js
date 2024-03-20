@@ -1,4 +1,4 @@
-import loginPage from "../PageObject/LoginPage";
+import loginPage from "../../PageObject/LoginPage";
 
 describe("Login Test",function(){
     it("Success login",function(){
