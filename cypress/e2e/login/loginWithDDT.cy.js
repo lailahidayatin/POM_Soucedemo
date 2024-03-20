@@ -1,5 +1,5 @@
-import loginPage from "../PageObject/LoginPage";
-import Data from "../fixtures/login.json";
+import loginPage from "../../PageObject/LoginPage";
+import Data from "../../fixtures/login.json";
 
 describe("Login Test", function () {
     const login = new loginPage();
